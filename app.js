@@ -2,7 +2,7 @@ const express = require("express")
 const mustacheExpress = require("mustache-express")
 const bodyParser = require("body-parser")
 //const MongoClient = require("mongodb").MongoClient --This is being replaced by mongoose.promise
-// const ObjectId = require("mongodb").ObjectId
+const ObjectId = require("mongodb").ObjectId
 const assert = require("assert")
 const mongoose = require("mongoose")
 
@@ -26,6 +26,19 @@ app.get("/", (req, res) => {
   Character.find({})
     .then(characters => {
       res.render("home", { characters })
+    })
+    .catch(err => {
+      res.json(err)
+    })
+})
+
+app.get("/info_personal/:id", (req, res) => {
+  const requestId = req.params.id
+
+  Character.findOne({ _id: ObjectId(requestId) })
+    .then(character => {
+      console.log(character)
+      res.render("info_personal", { character })
     })
     .catch(err => {
       res.json(err)
