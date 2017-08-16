@@ -18,6 +18,10 @@
             <h3>And that's it!! Nothing extra to see!</h3>
           {{/unique}}
         {{/facialCharacteristics}}
+
+        <form class="" action="/info_personal/{{_id}}/delete" method="post">
+          <button type="submit" name="button">Delete {{name}}</button>
+        </form>
     {{/character}}
 
 

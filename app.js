@@ -37,12 +37,19 @@ app.get("/info_personal/:id", (req, res) => {
 
   Character.findOne({ _id: ObjectId(requestId) })
     .then(character => {
-      console.log(character)
       res.render("info_personal", { character })
     })
     .catch(err => {
       res.json(err)
     })
+})
+
+app.post("/info_personal/:id/delete", (req, res) => {
+  const requestId = new ObjectId(req.params.id)
+  console.log(requestId)
+  Character.deleteOne({ _id: requestId }).then(res.redirect("/")).catch(err => {
+    res.json(err)
+  })
 })
 
 app.listen(3000, () => {
