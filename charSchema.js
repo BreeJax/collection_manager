@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 const hpCharacterSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
-  house: String,
+  house: { type: String, enum: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"] },
   yearBorn: { type: Number },
   facialCharacteristics: [
     {

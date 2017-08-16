@@ -29,14 +29,15 @@ const Character = require("./charSchema")
 //     console.log(err)
 //   })
 
-// //update
-// Character.updateOne({ name: "Lily" }, { name: "Lily Potter" })
-//   .then(doc => {
-//     console.log("wooot", doc)
-//   })
-//   .catch(err => {
-//     console.log("nooooope", err)
-//   })
+//update
+//name: Lily is to tell which one I am looking for, and then the second name it to tell them what you want to update.
+Character.updateOne({ name: "Lily" }, { name: "Lily Potter" })
+  .then(doc => {
+    console.log("wooot", doc)
+  })
+  .catch(err => {
+    console.log("nooooope", err)
+  })
 
 // //delete
 // Character.deleteOne({ name: "Lily Potter" })
