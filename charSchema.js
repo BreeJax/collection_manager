@@ -3,9 +3,13 @@ console.log("Working with mongoose")
 const mongoose = require("mongoose")
 
 const hpCharacterSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  house: { type: String, enum: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"] },
-  yearBorn: { type: Number },
+  name: { type: String, required: [true, "Character needs a name"], unique: true },
+  house: {
+    type: String,
+    enum: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+    message: "You must chose one of the 4 Hogwarts Houses"
+  },
+  yearBorn: { type: Number, required: true },
   facialCharacteristics: [
     {
       hair: { type: String, required: true, trim: true },
@@ -18,3 +22,5 @@ const hpCharacterSchema = new mongoose.Schema({
 const Character = mongoose.model("Character", hpCharacterSchema)
 
 module.exports = Character
+
+//enum means enumerated types, which means it's being limited to this type
