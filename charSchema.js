@@ -2,6 +2,9 @@ console.log("Working with mongoose")
 
 const mongoose = require("mongoose")
 
+mongoose.promise = global.promise
+mongoose.connect("mongodb://localhost:27017/hpCharacterSchemaDB")
+
 const hpCharacterSchema = new mongoose.Schema({
   name: { type: String, required: [true, "Character needs a name"], unique: true },
   house: {

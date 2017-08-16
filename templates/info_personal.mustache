@@ -2,9 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>More about {name}</title>
   </head>
   <body>
+    {{#characters}}
+    <h1>{{name}}</h1>
+    <h3>{{house}}</h3>
+    <h3>Born in the year {{yearBorn}}</h3>
+    {{#facialCharacteristics}}
+      <h3>{{name}}'s hair color is {{hair}}, they have {{eyeColor}} eyes.</h3>
+      {{#unique}}
+        <h3>Funny enough, they also have {{unique}}</h3>
+      {{/unique}}
+      {{^unique}}
+        <h3>And that's it!! Nothing extra to see!</h3>
+      {{/unique}}
+    {{/facialCharacteristics}}
+    {{/characters}}
+
 
   </body>
 </html>
