@@ -49,26 +49,23 @@ app.get("/createChar", (req, res) => {
 })
 
 app.post("/createChar", (req, res) => {
-  console.log(req.body)
   Character.create(req.body)
     .then(doc => {
       res.redirect("/")
     })
     .catch(err => {
-      res.json(err)
+      res.render("createChar", { err })
     })
 })
 
 app.post("/info_personal/:id/delete", (req, res) => {
   const requestId = new ObjectId(req.params.id)
-  console.log(requestId)
   Character.deleteOne({ _id: requestId }).then(res.redirect("/")).catch(err => {
     res.json(err)
   })
 })
 app.post("/info_personal/:id/edit", (req, res) => {
   const requestId = ObjectId(req.params.id)
-  console.log(requestId)
   Character.updateOne({ _id: requestId }, req.body).then(res.redirect("/")).catch(err => {
     res.json(err)
   })
