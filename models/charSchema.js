@@ -9,6 +9,7 @@ const hpCharacterSchema = new mongoose.Schema({
   name: { type: String, required: [true, "Character needs a name"], unique: true },
   house: {
     type: String,
+    //enum means enumerated types, which means it's being limited to this type
     enum: ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin", ""],
     message: "You must chose one of the 4 Hogwarts Houses"
   },
@@ -21,9 +22,24 @@ const hpCharacterSchema = new mongoose.Schema({
     }
   ]
 })
+// //virtual fields
+// age.get
+// return new Date().year - this.yearBorn
+// set(val)
+// this.yearBorn = new Date().getfullyear() - val
+//
+// let new Kid = new Character()
+//   newKid.sortinhouse ()
+// new kid
+//
+// luna.sortinhouse()
+//
+// //cb = call back
+//
+// hpCharacterSchema.methods.sortinhouse = () => {
+//   this.house = math.random
+// }
 
 const Character = mongoose.model("Character", hpCharacterSchema)
 
 module.exports = Character
-
-//enum means enumerated types, which means it's being limited to this type
