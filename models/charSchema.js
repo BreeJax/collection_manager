@@ -22,7 +22,7 @@ const hpCharacterSchema = new mongoose.Schema({
     }
   ]
 })
-// //virtual fields
+//virtual fields
 hpCharacterSchema
   .virtual("age")
   .get(function() {
