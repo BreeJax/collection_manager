@@ -1,1 +1,28 @@
+body {
+  text-align: center;
+}
 
+h3 {
+  font-size: 1.75em;
+}
+
+body > a {
+  font-size: 2em;
+}
+
+input[type=text] {
+  width: 15em;
+  height: 2em;
+  margin: 0.5em;
+}
+.edit {
+  padding: 0.5em;
+}
+button {
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+p {
+  margin: 0;
+}

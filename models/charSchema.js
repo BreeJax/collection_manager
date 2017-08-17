@@ -23,11 +23,15 @@ const hpCharacterSchema = new mongoose.Schema({
   ]
 })
 // //virtual fields
-// age.get
-// return new Date().year - this.yearBorn
-// set(val)
-// this.yearBorn = new Date().getfullyear() - val
-//
+hpCharacterSchema
+  .virtual("age")
+  .get(function() {
+    return new Date().getFullYear() - this.yearBorn
+  })
+  .set(function(val) {
+    this.yearBorn = new Date().getFullYear() - val
+  })
+
 // let new Kid = new Character()
 //   newKid.sortinhouse ()
 // new kid

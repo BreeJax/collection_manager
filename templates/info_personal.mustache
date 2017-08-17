@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css">
     <title></title>
   </head>
   <body>
@@ -23,7 +24,7 @@
         <form class="" action="/info_personal/{{_id}}/delete" method="post">
           <button type="submit" name="button">Delete {{name}}</button>
         </form>
-        <form class="" action="/info_personal/{{_id}}/edit" method="post">
+        <form class="edit" action="/info_personal/{{_id}}/edit" method="post">
           <p>name:</p>
           <input type="text" name="name" value="{{name}}">
           <p>Hogwarts house</p>
@@ -46,6 +47,7 @@
         <p>Anything extra on their face?</p>
       <input type="text" name="facialCharacteristics[unique]"   placeholder="Anything Interesting about them?">
       {{/facialCharacteristics}}
+      <p></p>
         <button type="submit">Update {{name}}!</button>
       </form>
       {{/character}}
