@@ -1,6 +1,14 @@
 body {
   text-align: center;
 }
+header {
+  height: 9em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 3.2em;
+}
 
 h3 {
   font-size: 1.75em;
@@ -25,4 +33,9 @@ button {
 
 p {
   margin: 0;
+}
+img {
+  width: 7em;
+  height: 7em;
+  padding-bottom: 0.25em;
 }

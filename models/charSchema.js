@@ -32,6 +32,10 @@ hpCharacterSchema
     this.yearBorn = new Date().getFullYear() - val
   })
 
+// hpCharacterSchema.virtual("newKid").get(function(){})
+
+//go though the houses
+
 // let new Kid = new Character()
 //   newKid.sortinhouse ()
 // new kid
