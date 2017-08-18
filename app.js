@@ -22,6 +22,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 require("./routes/characters")(app)
+require("./routes/houses")(app)
 
 app.listen(3000, () => {
   console.log("I've got the magic in me!")

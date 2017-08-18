@@ -31,6 +31,14 @@ hpCharacterSchema
   .set(function(val) {
     this.yearBorn = new Date().getFullYear() - val
   })
+// hpCharacterSchema
+//   .virtual("newKid")
+//   .get(function() {
+//     return new Kid().getFullYear() - this.yearBorn
+//   })
+//   .set(function(val) {
+//     this.yearBorn = new Date().getFullYear() - val
+//   })
 
 // hpCharacterSchema.virtual("newKid").get(function(){})
 
