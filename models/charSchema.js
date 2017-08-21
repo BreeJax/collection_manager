@@ -31,6 +31,18 @@ hpCharacterSchema
   .set(function(val) {
     this.yearBorn = new Date().getFullYear() - val
   })
+
+hpCharacterSchema.methods.sortCharacterIntoHouse = function(callback) {
+  let HOUSES = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+  let selectedHouse = undefined
+  while (!selectedHouse) {
+    selectedHouse = HOUSES[Math.floor(Math.random() * HOUSES.length)]
+  }
+  // console.log('selected', selectedHouse, this)
+  this.house = selectedHouse
+  return this.save()
+}
+
 // hpCharacterSchema
 //   .virtual("newKid")
 //   .get(function() {

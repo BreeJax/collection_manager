@@ -6,10 +6,14 @@
     <title>Harry Potter Characters</title>
   </head>
   <header>
-    <img src="../../img/Gryffindor.jpeg" alt="">
-    <img src="../../img/hufflepuff.jpg" alt="">
-    <img src="../../img/ravenclaw.jpeg" alt="">
-    <img src="../../img/slytherin.jpg" alt="">
+    <a href="/GRHS/"><img src="../../img/Gryffindor.jpeg" alt=""></a>
+    <form class="" action="GRHS/Hufflepuff" method="get">
+      <button type="button" name="button"><img src="../../img/hufflepuff.jpg" alt=""></button>
+
+      <!-- <a href="/GRHS/Hufflepuff"><img src="../../img/hufflepuff.jpg" alt=""></a> -->
+    </form>
+    <a href="/GRHS/"><img src="../../img/ravenclaw.jpeg" alt=""></a>
+    <a href="/GRHS/"><img src="../../img/slytherin.jpg" alt=""></a>
     <a href="/enroll/"><img src="../../img/sorting-hat.jpeg" alt=""></a>
 
   </header>
@@ -18,6 +22,7 @@
     {{#characters}}
     <h3> <a href="/info_personal/{{_id}}">{{name}}</a></h3>
     <h4>{{yearBorn}}</h4>
+    <h4>{{house}}</h4>
     {{/characters}}
     <a href="/createChar">Add another Harry Potter Character</a>
 
