@@ -14,7 +14,7 @@ module.exports = app => {
         console.log(err)
       })
   })
-  app.post("/enroll", (request, response) => {
+  app.post("/enroll/:id", (request, response) => {
     const id = request.params.id
     Character.findOne({ _id: ObjectId(id) }).then(person => {
       person
