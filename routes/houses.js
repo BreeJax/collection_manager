@@ -32,8 +32,26 @@ module.exports = app => {
         console.log(err)
       })
   })
-  app.get("/GRHS", (request, response) => {
+  app.get("/GRHS/Ravenclaw", (request, response) => {
     Character.find({ house: "Ravenclaw" })
+      .then(characters => {
+        response.render("GRHS", { characters })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
+  app.get("/GRHS/Slytherin", (request, response) => {
+    Character.find({ house: "Slytherin" })
+      .then(characters => {
+        response.render("GRHS", { characters })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
+  app.get("/GRHS/Gryffindor", (request, response) => {
+    Character.find({ house: "Gryffindor" })
       .then(characters => {
         response.render("GRHS", { characters })
       })

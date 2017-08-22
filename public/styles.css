@@ -11,13 +11,13 @@ h1 {
   width: 100%;
 }
 header {
-  height: 9em;
+  height: 8em;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-bottom: 3.2em;
-  background-color: white;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 h3 {
@@ -26,6 +26,7 @@ h3 {
 
 body > a {
   font-size: 2em;
+  color: white;
 }
 
 input[type=text] {
@@ -48,7 +49,8 @@ p {
   margin: 0;
 }
 img {
-  width: 7em;
-  height: 7em;
+  width: 6.5em;
+  height: 6.5em;
   padding-bottom: 0.25em;
+  margin: 1em;
 }
