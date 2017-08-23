@@ -38,9 +38,12 @@ hpCharacterSchema.methods.sortCharacterIntoHouse = function(callback) {
   while (!selectedHouse) {
     selectedHouse = HOUSES[Math.floor(Math.random() * HOUSES.length)]
   }
-  // console.log('selected', selectedHouse, this)
   this.house = selectedHouse
   return this.save()
+}
+
+hpCharacterSchema.statics.withoutHouse = function(callback) {
+  return Character.find({ house: "", yearBorn: { $gt: 1998 } })
 }
 
 // hpCharacterSchema

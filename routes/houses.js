@@ -6,7 +6,7 @@ mongoose.promise = global.promise
 
 module.exports = app => {
   app.get("/enroll", (request, response) => {
-    Character.find({ house: "", yearBorn: { $gt: 1998 } })
+    Character.withoutHouse()
       .then(characters => {
         response.render("enroll", { characters })
       })
