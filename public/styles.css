@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  text-shadow: 3px 3px 3px black;
   background-image: url(../../img/HogwartsCastle.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -27,6 +28,30 @@ h3 {
 body > a {
   font-size: 2em;
   color: white;
+}
+a {
+  color: white;
+  text-shadow: 3px 3px 3px black;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: rgba(196, 189, 59, 0.60);
+}
+
+#Gryf:hover {
+  background-color: rgba(196, 61, 59, 0.60);
+}
+
+#Raven:hover {
+  background-color: rgba(59, 75, 196, 0.60);
+}
+#Sly:hover {
+  background-color: rgba(64, 149, 45, 0.60);
+}
+
+#Huff:hover {
+  background-color: rgba(134, 45, 149, 0.60);
 }
 
 input[type=text] {
