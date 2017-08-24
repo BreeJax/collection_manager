@@ -7,6 +7,7 @@ mongoose.connect("mongodb://localhost:27017/hpCharacterSchemaDB")
 
 const hpCharacterSchema = new mongoose.Schema({
   name: { type: String, required: [true, "Character needs a name"], unique: true },
+  quidditchPlayer: { type },
   house: {
     type: String,
     //enum means enumerated types, which means it's being limited to this type
@@ -32,6 +33,7 @@ hpCharacterSchema
     this.yearBorn = new Date().getFullYear() - val
   })
 
+// Instance method
 hpCharacterSchema.methods.sortCharacterIntoHouse = function(callback) {
   let HOUSES = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
   let selectedHouse = undefined
@@ -42,34 +44,10 @@ hpCharacterSchema.methods.sortCharacterIntoHouse = function(callback) {
   return this.save()
 }
 
+//static methods
 hpCharacterSchema.statics.withoutHouse = function(callback) {
   return Character.find({ house: "", yearBorn: { $gt: 1998 } })
 }
-
-// hpCharacterSchema
-//   .virtual("newKid")
-//   .get(function() {
-//     return new Kid().getFullYear() - this.yearBorn
-//   })
-//   .set(function(val) {
-//     this.yearBorn = new Date().getFullYear() - val
-//   })
-
-// hpCharacterSchema.virtual("newKid").get(function(){})
-
-//go though the houses
-
-// let new Kid = new Character()
-//   newKid.sortinhouse ()
-// new kid
-//
-// luna.sortinhouse()
-//
-// //cb = call back
-//
-// hpCharacterSchema.methods.sortinhouse = () => {
-//   this.house = math.random
-// }
 
 const Character = mongoose.model("Character", hpCharacterSchema)
 
