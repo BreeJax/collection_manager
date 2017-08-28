@@ -7,7 +7,6 @@ mongoose.connect("mongodb://localhost:27017/hpCharacterSchemaDB")
 
 const hpCharacterSchema = new mongoose.Schema({
   name: { type: String, required: [true, "Character needs a name"], unique: true },
-  quidditchPlayer: { type },
   house: {
     type: String,
     //enum means enumerated types, which means it's being limited to this type
