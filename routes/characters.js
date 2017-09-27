@@ -43,14 +43,18 @@ module.exports = app => {
 
   app.post("/info_personal/:id/delete", (req, res) => {
     const requestId = new ObjectId(req.params.id)
-    Character.deleteOne({ _id: requestId }).then(res.redirect("/")).catch(err => {
-      res.json(err)
-    })
+    Character.deleteOne({ _id: requestId })
+      .then(res.redirect("/"))
+      .catch(err => {
+        res.json(err)
+      })
   })
   app.post("/info_personal/:id/edit", (req, res) => {
     const requestId = ObjectId(req.params.id)
-    Character.updateOne({ _id: requestId }, req.body).then(res.redirect("/")).catch(err => {
-      res.json(err)
-    })
+    Character.updateOne({ _id: requestId }, req.body)
+      .then(res.redirect("/"))
+      .catch(err => {
+        res.json(err)
+      })
   })
 }
