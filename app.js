@@ -16,7 +16,7 @@ mongoose.connect(connectionString, () => {
 const app = express()
 
 app.engine("mustache", mustacheExpress())
-app.set("views", "./templates")
+app.set("views", "templates")
 app.set("view engine", "mustache")
 
 app.use(express.static("public"))
