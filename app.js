@@ -7,7 +7,9 @@ const assert = require("assert")
 const mongoose = require("mongoose")
 
 mongoose.promise = global.promise
-mongoose.connect("mongodb://localhost:27017/hpCharacterSchemaDB", () => {
+const connectionString = process.env.MONGO_URL || "mongodb://localhost:27017/hpCharacterSchemaDB"
+
+mongoose.connect(connectionString, () => {
   console.log("connected to mongodb!!!!")
 })
 
@@ -24,6 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 require("./routes/characters")(app)
 require("./routes/houses")(app)
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("I've got the magic in me!")
 })
