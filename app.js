@@ -9,8 +9,12 @@ const mongoose = require("mongoose")
 mongoose.promise = global.promise
 const connectionString = process.env.MONGO_URL || "mongodb://localhost:27017/hpCharacterSchemaDB"
 
-mongoose.connect(connectionString, () => {
-  console.log("connected to mongodb!!!!")
+mongoose.connect(connectionString, err => {
+  if (err) {
+    console.log("oops with mongodb", err)
+  } else {
+    console.log("connected to mongodb!!!!")
+  }
 })
 
 const app = express()
